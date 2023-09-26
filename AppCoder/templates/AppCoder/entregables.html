@@ -1,0 +1,29 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Formulario - Agregar Entregables</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="nombre">Nombre: </label>
+        <input id="nombre" type="text" name="nombre" maxlength="100" required>
+        </div>
+        <div>
+            <label for="fechaDeEntrega">Fecha entrega: </label>
+        <input id="fechaDeEntrega" type="date" name="fechaDeEntrega" maxlength="100" required>
+        </div>
+        <div>
+            <label for="entregado">entregado: </label>
+        <input id="entregado" type="checkbox" name="entregado" maxlength="100">
+        </div>
+        
+        <input type="submit", value="Enviar">
+    </form>
+  
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+{% if alumnos %}
+    <p>Alumnos</p>
+    <ul>
+    {% for alumno in alumnos %}
+        <li> {{alumno.nombre}} {{alumno.apellido}} {{alumno.email}}</li>
+    {% endfor %}
+    </ul>
+    
+{% else %}
+    <p>{{mensaje}}</p>
+{% endif %}
+
+{% endblock %}

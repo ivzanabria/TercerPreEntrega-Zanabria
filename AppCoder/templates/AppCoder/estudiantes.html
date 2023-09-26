@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Formulario - Agregar Estudiantes</h1>
+    {% comment %} <p>Info de los estudiantes</p> {% endcomment %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="nombre">Tú nombre: </label>
+        <input id="nombre" type="text" name="nombre" maxlength="100" required>
+        </div>
+        <div>
+            <label for="apellido">Tú apellido: </label>
+        <input id="apellido" type="text" name="apellido" maxlength="100" required>
+        </div>
+        <div>
+            <label for="email">Tú email: </label>
+        <input id="email" type="text" name="email" maxlength="100" required>
+        
+        </div>
+        <input type="submit", value="Enviar">
+    </form>
+{% endblock %}
